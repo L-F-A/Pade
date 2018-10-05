@@ -1,30 +1,30 @@
 import numpy as np
 '''
 #################################################################
-#   This implement pade fitting for analytical continuation	#
-#								#
-#   written by Louis-François Arsenault				#
-#								#
-# wn  :	  Positive Matsubara frequency wn. Numpy 1d array	#
-# fwn :   Function f(iwn) to be continued. Numpy 1d array	#
-# N   :	  Use N wn for the fitting				#
-#								#
-# wn and fwn must be 1d array, very important as I did not put a#
-# testing test throwing warning etc for the moment		#
-#								#
-# example:							#
-#	#Say we have a function fwn in Matsubara frequency 	#
-#	#wn and we want to do Pade using the first 100 wn	#
-#	N=100							#
-#	pade=Pade(wn,fwn,N)					#
-#	pade.coeffs()						#
-#								#
-#	#If for example we want to know the function on real	#
-#	axis for 500 freqencies from -1 to 1 with eta=0		#
-#	w=np.linspace(-1,1,500)					#
-#	fw=np.zeros(500)					#
-#	for r in range(500):					#
-#		fw[r]=pade.query(w[r],0)			#
+   This implement pade fitting for analytical continuation	
+								
+   written by Louis-François Arsenault				
+								
+ wn  :	  Positive Matsubara frequency wn. Numpy 1d array	
+ fwn :   Function f(iwn) to be continued. Numpy 1d array	
+ N   :	  Use N wn for the fitting				
+								
+ wn and fwn must be 1d array, very important as I did not put a
+ testing test throwing warning etc for the moment		
+								
+ example:							
+	#Say we have a function fwn in Matsubara frequency 	
+	#wn and we want to do Pade using the first 100 wn	
+	N=100							
+	pade=Pade(wn,fwn,N)					
+	pade.coeffs()						
+								
+	#If for example we want to know the function on real	
+	axis for 500 freqencies from -1 to 1 with eta=0		
+	w=np.linspace(-1,1,500)					
+	fw=np.zeros(500)					
+	for r in range(500):					
+		fw[r]=pade.query(w[r],0)			
 #################################################################
 '''
 class Pade():
